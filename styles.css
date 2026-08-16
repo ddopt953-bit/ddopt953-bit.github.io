@@ -73,10 +73,31 @@ a { color: inherit; }
   z-index: 2;
 }
 .brand {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
-  color: var(--blue);
   font-weight: 800;
-  letter-spacing: 0.12em;
+  font-size: clamp(12px, 1.3vw, 15px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  background: linear-gradient(90deg, #65b9ff 0%, #f5fbff 34%, #7cecff 50%, #f5fbff 66%, #65b9ff 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 5px rgba(72, 165, 255, 0.58));
+  animation: brand-shimmer 4.8s linear infinite, brand-breathe 2.8s ease-in-out infinite;
+}
+@keyframes brand-shimmer {
+  to { background-position: -240% 0; }
+}
+@keyframes brand-breathe {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(72, 165, 255, 0.42)); }
+  50% { filter: drop-shadow(0 0 9px rgba(124, 236, 255, 0.82)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand { animation: none; }
 }
 .nav__links { display: flex; gap: 24px; }
 .nav__links a { color: var(--muted); text-decoration: none; font-size: 14px; }
