@@ -79,7 +79,6 @@ a { color: inherit; }
   font-weight: 800;
   font-size: clamp(12px, 1.3vw, 15px);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   white-space: nowrap;
   color: transparent;
   background: linear-gradient(90deg, #65b9ff 0%, #f5fbff 34%, #7cecff 50%, #f5fbff 66%, #65b9ff 100%);
